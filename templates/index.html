@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Codeforces Hack Counter
+    </title>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "https://www.w3schools.com/w3css/4/w3.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/logo.png">
+    <style>
+    html, body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Roboto", sans-serif
+    }
+
+    #loader {
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+  </head>
+  <body class = "w3-light-grey">
+    <header  class = "w3-container w3-teal w3-center w3-margin-top">
+      <h1>
+        <img  src = "../static/logo.png" height="42" width="50" alt = "Logo">&nbsp;Codeforces Hack Counter
+      </h1>
+      <a class="github-button" href="https://github.com/abhiseksinha23" data-icon="octicon" aria-label="Repo on Github">
+        Repo
+      </a>
+    </header>
+    <!-- Page Container -->
+    <div class = "w3-content w3-margin-top" style = "max-width: 1400px;">
+      <!-- The Grid -->
+      <div class = "w3-row-padding">
+        <!-- Left Column -->
+        <div class = "w3-third">
+          <div class = "w3-white w3-text-grey w3-card-4">
+            <div id = "logo" class = "w3-display-container w3-center">
+              <img  src = "../static/avatar.jpg" style = "width:100%" alt = "Avatar">
+            </div>
+            <div class = "w3-container">
+              <h1 class = "w3-center w3-text-teal">
+              </h1>
+              <p id = "handle">
+                Handle: 
+              </p>
+              <p id = "name">
+                Name: 
+              </p>
+              <p id = "city">
+                City: 
+              </p>
+              <p id = "country">
+                Country: 
+              </p>
+              <p id = "organization">
+                Organozation: 
+              </p>
+              <p id = "rating">
+                Rating: 
+              </p>
+              <p id = "maxRating">
+                Maximum Rating: 
+              </p>
+              <p id = "rank">
+                Rank: 
+              </p>
+              <p id = "maxRank">
+                Maximum Rank: 
+              </p>
+              <p id = "friendOfCount">
+                Friend of: 
+              </p>
+              <p id = "contribution">
+                Contribution: 
+              </p>
+            </div>
+          </div>
+          <br>
+        <!-- End Left Column -->
+        </div>
+        <!-- Right Column -->
+        <div class = "w3-twothird">
+          <div class = "w3-container w3-card w3-white w3-margin-bottom">
+            <br>
+            Codeforces Handle:&nbsp; <input id = "username" type = "text" name = "fname"> &nbsp;&nbsp;
+            <button id = "button1" onclick = "buttonclick()">
+              Find
+            </button>
+            <br>
+            <br>
+          </div>
+          <div class = "w3-container w3-card w3-white w3-margin-bottom">
+            <div id = "loader" class = "w3-container" style = "display: none;">
+            </div>
+            <div id = "count" class = "w3-container">
+                <h2>
+                  Hack Counts
+                </h2>
+                <p id = "successfulHackCount">
+                  Successful Hack Count:
+                </p>
+                <p id = "unsuccessfulHackCount">
+                  Unsuccessful Hack Count:
+                </p>
+                <p id = "totalHackCount">
+                  Total Hack Count:
+                </p>
+                <hr>
+                <h2>
+                Submission Counts
+              </h2>
+              <p id = "FAILED">
+                Failed Count: 
+              </p>
+              <p id = "OK">
+                Ok Count: 
+              </p>
+              <p id = "PARTIAL">
+                Partial Count: 
+              </p>
+              <p id = "COMPILATION_ERROR">
+                Compilation Error Count: 
+              </p>
+              <p id = "RUNTIME_ERROR">
+                Runtime Error Count: 
+              </p>
+              <p id = "WRONG_ANSWER">
+                Wrong Answer Count:
+              </p>
+              <p id = "PRESENTATION_ERROR">
+                Presentation Error Count: 
+              </p>
+              <p id = "TIME_LIMIT_EXCEEDED">
+                Time Limit Exceeded Count: 
+              </p>
+              <p id = "MEMORY_LIMIT_EXCEEDED">
+                Memory Limit Exceeded Count: 
+              </p>
+              <p id = "IDLENESS_LIMIT_EXCEEDED">
+                Idleness Limit Exceeded Count: 
+              </p>
+              <p id = "SECURITY_VIOLATED">
+                Security Violated Count: 
+              </p>
+              <p id = "CRASHED">
+                Crashed Count: 
+              </p>
+              <p id = "INPUT_PREPARATION_CRASHED">
+                Input Preparation Crashed Count: 
+              </p>
+              <p id = "CHALLENGED">
+                Challenged Count: 
+              </p>
+              <p id = "SKIPPED">
+                Skipped Count: 
+              </p>
+              <p id = "TESTING">
+                Testing Count: 
+              </p>
+              <p id = "REJECTED">
+                Rejected Count: 
+              </p>
+              <p id = "ABSENT">
+                Absent Count: 
+              </p>
+              <p id = "totalSubmissionCount">
+                Total Submission Count: 
+              </p>
+            </div>
+          </div>
+        <!-- End Right Column -->
+        </div>
+      <!-- End Grid -->
+      </div>
+      <!-- End Page Container -->
+    </div>
+    <footer class = "w3-container w3-teal w3-center w3-margin-top">
+      <p>
+        Developed by<a href="https://abhiseksinha23.github.io/portfolio/"> Abhisek Kumar</a>
+      </p>
+      <a href = "https://www.linkedin.com/in/abhisek-kumar-38148b18a/" target = "_blank">
+        <i class = "fa fa-linkedin w3-xxlarge w3-hover-opacity">
+        </i>
+      </a>
+      &nbsp;&nbsp;
+      <a href = "https://github.com/abhiseksinha23" target = "_blank">
+        <i class = "fa fa-github w3-xxlarge w3-hover-opacity">
+        </i>
+      </a>
+    </footer>
+    <script async defer src="https://buttons.github.io/buttons.js">
+    </script>
+    <script>
+      document.getElementById("username").addEventListener("keypress", function(event) {
+        if (event.keyCode == 13) {
+          buttonclick();
+        }
+      });
+      function buttonclick(){
+        var u = document.getElementById("username").value
+        var req = new XMLHttpRequest();
+        req.open("GET", "https://codeforces.com/api/user.info?handles=" + u, true);
+        req.send();
+        req.onload = function () {
+          var data = JSON.parse(req.responseText);
+          document.getElementById("logo").innerHTML = "<img  src = https:" + data.result[0].titlePhoto + " style = 'width:100%' alt = 'Avatar'>";
+          document.getElementById("handle").innerHTML = "Handle: " + data.result[0].handle;
+          document.getElementById("name").innerHTML = "Name: " + data.result[0].firstName + ' ' + data.result[0].lastName;
+          document.getElementById("city").innerHTML = "City: " + data.result[0].city;
+          document.getElementById("country").innerHTML = "Country: " + data.result[0].country;
+          document.getElementById("organization").innerHTML = "Organization: " + data.result[0].organization;
+          document.getElementById("rating").innerHTML = "Rating: " + data.result[0].rating;
+          document.getElementById("maxRating").innerHTML = "Maximum Rating: " + data.result[0].maxRating;
+          document.getElementById("rank").innerHTML = "Rank: " + data.result[0].rank;
+          document.getElementById("maxRank").innerHTML = "Maximum Rank: " + data.result[0].maxRank;
+          document.getElementById("friendOfCount").innerHTML = "Friend of: " + data.result[0].friendOfCount + " users";
+          document.getElementById("contribution").innerHTML = "Contribution: " + data.result[0].contribution;
+        }
+        var req2 = new XMLHttpRequest();
+        document.getElementById("count").style.display = "none";
+        document.getElementById("loader").style.display = "block";
+        req2.open("GET", "http://127.0.0.1:5000/test_api?user=" + u, true);
+        req2.send();
+        req2.onload = function () {
+          document.getElementById("count").style.display = "block";
+          document.getElementById("loader").style.display = "none";
+          var data2 = JSON.parse(req2.responseText);
+          var totalHackCount = data2.successfulHackCount + data2.unsuccessfulHackCount;
+          document.getElementById("successfulHackCount").innerHTML = "Successful Hack Count: " + data2.successfulHackCount + " (" + (data2.successfulHackCount * 100 / totalHackCount).toFixed(2) + "%)";
+          document.getElementById("unsuccessfulHackCount").innerHTML = "Unsuccessful Hack Count: " + data2.unsuccessfulHackCount + " (" + (data2.unsuccessfulHackCount * 100 / totalHackCount).toFixed(2) + "%)";
+          document.getElementById("totalHackCount").innerHTML = "Total Hack Count: " + totalHackCount;
+          var totalSubmissionCount = data2.FAILED + data2.OK + data2.PARTIAL + data2.COMPILATION_ERROR + data2.RUNTIME_ERROR + data2.WRONG_ANSWER + data2.PRESENTATION_ERROR + data2.TIME_LIMIT_EXCEEDED + data2.MEMORY_LIMIT_EXCEEDED + data2.IDLENESS_LIMIT_EXCEEDED + data2.SECURITY_VIOLATED + data2.CRASHED + data2.INPUT_PREPARATION_CRASHED + data2.CHALLENGED + data2.SKIPPED + data2.TESTING + data2.REJECTED + data2.ABSENT
+          document.getElementById("FAILED").innerHTML = "Failed Count: " + data2.FAILED + " (" + (data2.FAILED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("OK").innerHTML = "Ok Count: " + data2.OK + " (" + (data2.OK * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("PARTIAL").innerHTML = "Partial Count: " + data2.PARTIAL + " (" + (data2.PARTIAL * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("COMPILATION_ERROR").innerHTML = "Compilation Error Count: " + data2.COMPILATION_ERROR + " (" + (data2.COMPILATION_ERROR * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("RUNTIME_ERROR").innerHTML = "Runtime Error Count: " + data2.RUNTIME_ERROR + " (" + (data2.RUNTIME_ERROR * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("WRONG_ANSWER").innerHTML = "Wrong Answer Count: " + data2.WRONG_ANSWER + " (" + (data2.WRONG_ANSWER * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("PRESENTATION_ERROR").innerHTML = "Presentation Error Count: " + data2.PRESENTATION_ERROR + " (" + (data2.PRESENTATION_ERROR * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("TIME_LIMIT_EXCEEDED").innerHTML = "Time Limit Exceeded Count: " + data2.TIME_LIMIT_EXCEEDED + " (" + (data2.TIME_LIMIT_EXCEEDED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("MEMORY_LIMIT_EXCEEDED").innerHTML = "Memory Limit Exceeded Count: " + data2.MEMORY_LIMIT_EXCEEDED + " (" + (data2.MEMORY_LIMIT_EXCEEDED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("IDLENESS_LIMIT_EXCEEDED").innerHTML = "Idleness Limit Exceeded Count: " + data2.IDLENESS_LIMIT_EXCEEDED + " (" + (data2.IDLENESS_LIMIT_EXCEEDED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("SECURITY_VIOLATED").innerHTML = "Security Violated Count: " + data2.SECURITY_VIOLATED + " (" + (data2.SECURITY_VIOLATED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("CRASHED").innerHTML = "Crashed Count: " + data2.CRASHED + " (" + (data2.CRASHED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("INPUT_PREPARATION_CRASHED").innerHTML = "Input Preparation Crashed Count: " + data2.INPUT_PREPARATION_CRASHED + " (" + (data2.INPUT_PREPARATION_CRASHED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("CHALLENGED").innerHTML = "Challenged Count: " + data2.CHALLENGED + " (" + (data2.CHALLENGED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("SKIPPED").innerHTML = "Skipped Count: " + data2.SKIPPED + " (" + (data2.SKIPPED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("TESTING").innerHTML = "Testing Count: " + data2.TESTING + " (" + (data2.TESTING * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("REJECTED").innerHTML = "Rejected Count: " + data2.REJECTED + " (" + (data2.REJECTED * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("ABSENT").innerHTML = "Absent Count: " + data2.ABSENT + " (" + (data2.ABSENT * 100 / totalSubmissionCount).toFixed(2) +"%)";
+          document.getElementById("totalSubmissionCount").innerHTML = "Total Submission Count: " + totalSubmissionCount;
+        }
+      }
+    </script>
+  </body>
+</html>
