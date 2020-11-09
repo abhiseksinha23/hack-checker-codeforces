@@ -1,8 +1,6 @@
-# Codeforces Hack Counter
+#Hack Counter Codeforces
 
 A web app that computes hack counts and submission counts of a given Codeforces user handle.
-
-![Demo](/demo.gif)
 
 ## Steps to try it locally
 
