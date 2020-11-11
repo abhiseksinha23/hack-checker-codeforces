@@ -2,7 +2,7 @@
 
 A web app that computes hack counts and submission counts of a given Codeforces user handle.
 
-(Inspired from knayan's project https://github.com/knayan111/Codeforces_Hack_Counter)
+(Inspired from knayan's project -  https://github.com/knayan111/Codeforces_Hack_Counter)
 ## Steps to try it locally
 
 1. Fork this repo.
